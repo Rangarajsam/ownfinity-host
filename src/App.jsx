@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
-import Header from './components/Header';
 import Footer from './components/Footer';
+import HeaderApp from './components/mf/HeaderApp';
 import ProductsApp from './components/mf/ProductsApp';
 
 function App() {
 
   return (
     <>
-      <Header />
+      <HeaderApp />
       <main className="flex-1 container mx-auto mt-[93px] h-[calc(100vh - 150px)] overflow-auto">
         {/* remote application placeholder */}
         <BrowserRouter>
