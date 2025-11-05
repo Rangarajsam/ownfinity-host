@@ -6,7 +6,9 @@ const moduleFederationConfig = {
     filename: 'remoteEntry.js',
     remotes: {
         products: 'products@http://localhost:2001/remoteEntry.js',
-        header: 'header@http://localhost:2002/remoteEntry.js'
+        header: 'header@http://localhost:2002/remoteEntry.js',
+        authorization: 'authorization@http://localhost:2003/remoteEntry.js',
+        cart: 'cart@http://localhost:2004/remoteEntry.js'
     },
     exposes: {
         './eventBus': './src/event-bus'

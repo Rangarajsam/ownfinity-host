@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Footer from './components/Footer';
 import HeaderApp from './components/mf/HeaderApp';
 import ProductsApp from './components/mf/ProductsApp';
+import AuthorizationApp from './components/mf/AuthorizationApp';
+import CartApp from './components/mf/CartApp';
 
 function App() {
 
   return (
     <>
-      <HeaderApp />
-      <main className="flex-1 container mx-auto mt-[93px] h-[calc(100vh - 150px)] overflow-auto">
-        {/* remote application placeholder */}
-        <BrowserRouter>
+      <BrowserRouter>
+        <HeaderApp />
+        <main className="flex-1 container mx-auto mt-[93px] h-[calc(100vh - 150px)] overflow-auto">
+          {/* remote application placeholder */}
           <Routes>
-            <Route path="/" element={<ProductsApp/>} />
+            <Route path="/" element={<ProductsApp />} />
+            <Route path="/login" element={<AuthorizationApp />} />
+            <Route path="/cart" element={<CartApp />} />
           </Routes>
-        </BrowserRouter>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </BrowserRouter>
+
     </>
   )
 }
