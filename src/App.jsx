@@ -6,6 +6,7 @@ import HeaderApp from './components/mf/HeaderApp';
 import ProductsApp from './components/mf/ProductsApp';
 import AuthorizationApp from './components/mf/AuthorizationApp';
 import CartApp from './components/mf/CartApp';
+import WishlistApp from './components/mf/WishlistApp';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<ProductsApp />} />
             <Route path="/login" element={<AuthorizationApp />} />
             <Route path="/cart" element={<CartApp />} />
+            <Route path="/wishlist" element={<WishlistApp />} />
           </Routes>
         </main>
         <Footer />
