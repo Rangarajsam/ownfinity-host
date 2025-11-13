@@ -7,6 +7,7 @@ import ProductsApp from './components/mf/ProductsApp';
 import AuthorizationApp from './components/mf/AuthorizationApp';
 import CartApp from './components/mf/CartApp';
 import WishlistApp from './components/mf/WishlistApp';
+import ProfileApp from './components/mf/ProfileApp';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/login" element={<AuthorizationApp />} />
             <Route path="/cart" element={<CartApp />} />
             <Route path="/wishlist" element={<WishlistApp />} />
+            <Route path="/profile" element={<ProfileApp />} />
           </Routes>
         </main>
         <Footer />

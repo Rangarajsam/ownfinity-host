@@ -9,7 +9,8 @@ const moduleFederationConfig = {
         header: 'header@http://localhost:2002/remoteEntry.js',
         authorization: 'authorization@http://localhost:2003/remoteEntry.js',
         cart: 'cart@http://localhost:2004/remoteEntry.js',
-        wishlist: 'wishlist@http://localhost:2005/remoteEntry.js'
+        wishlist: 'wishlist@http://localhost:2005/remoteEntry.js',
+        profile: 'profile@http://localhost:2006/remoteEntry.js'
     },
     exposes: {
         './eventBus': './src/event-bus'
