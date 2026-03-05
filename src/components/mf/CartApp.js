@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import {mount} from "cart/CartApp";
+import {mount, unmount} from "cart/CartApp";
 
 export default function() {
     const cartAppRef = useRef();
@@ -7,6 +7,12 @@ export default function() {
         if(cartAppRef.current) {
             mount(cartAppRef.current);
         }
+        
+        return () => {
+            if(cartAppRef.current) {
+                unmount(cartAppRef.current);
+            }
+        };
     }, [])
 
     return (

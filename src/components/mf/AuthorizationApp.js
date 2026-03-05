@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import { mount } from 'authorization/AuthorizationApp';
+import { mount, unmount } from 'authorization/AuthorizationApp';
 
 export default function() {
      const authorizationAppRef = useRef();
@@ -7,6 +7,12 @@ export default function() {
             if(authorizationAppRef.current) {
                 mount(authorizationAppRef.current);
             }
+            
+            return () => {
+                if(authorizationAppRef.current) {
+                    unmount(authorizationAppRef.current);
+                }
+            };
      }, [])
 
      return (

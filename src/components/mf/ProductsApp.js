@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { mount } from "products/ProductsApp";
+import { mount, unmount } from "products/ProductsApp";
 
 export default function () {
     const productsAppRef = useRef();
@@ -7,6 +7,12 @@ export default function () {
         if (productsAppRef.current) {
             mount(productsAppRef.current);
         }
+        
+        return () => {
+            if (productsAppRef.current) {
+                unmount(productsAppRef.current);
+            }
+        };
     }, [])
 
     return (

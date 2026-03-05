@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { mount } from 'wishlist/WishlistApp';
+import { mount, unmount } from 'wishlist/WishlistApp';
 
 export default function() {
     const wishlistAppRef = useRef();
@@ -7,6 +7,12 @@ export default function() {
         if(wishlistAppRef.current){
             mount(wishlistAppRef.current);
         }
+        
+        return () => {
+            if(wishlistAppRef.current) {
+                unmount(wishlistAppRef.current);
+            }
+        };
     }, [])
     return (
         <div ref={wishlistAppRef}></div>

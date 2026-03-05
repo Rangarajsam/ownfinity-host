@@ -1,4 +1,3 @@
-const { exposes, filename } = require('../../Ownfinity-Products/config/moduleFederaion.config');
 const packageJsonCommon = require('../package.json');
 
 const moduleFederationConfig = {
@@ -13,11 +12,11 @@ const moduleFederationConfig = {
         profile: 'profile@http://localhost:2006/remoteEntry.js'
     },
     exposes: {
-        './eventBus': './src/event-bus'
+        './eventBus': './src/event-bus.js'
     },
     shared: {
         ...packageJsonCommon.dependencies,
-        mitt: { singleton: true }
+        mitt: { singleton: true, strictVersion: false, requiredVersion: false }
     }
 }
 

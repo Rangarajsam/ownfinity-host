@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import {mount} from "profile/ProfileApp";
+import {mount, unmount} from "profile/ProfileApp";
 
 export default function(){
     const profileAppRef = useRef();
@@ -8,6 +8,12 @@ export default function(){
         if(profileAppRef.current){
             mount(profileAppRef.current);
         }
+        
+        return () => {
+            if(profileAppRef.current) {
+                unmount(profileAppRef.current);
+            }
+        };
 
     },[])
 
