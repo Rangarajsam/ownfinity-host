@@ -35,6 +35,7 @@ const AppHostRouterSync = () => {
     }, []);
 
     // Emit host navigation changes
+    // test comment for workflow run
     useEffect(() => {
         console.log("Host route changed, emitting host:navigate", location.pathname);
         eventBus.emit("host:navigate", location.pathname);
