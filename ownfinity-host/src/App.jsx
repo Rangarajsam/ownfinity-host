@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, useMatch } from 'react-router-dom';
 import './App.css'
 import AppHostRouterSync from './AppHostRouterSync.jsx';
-import Footer from './components/Footer';
-import HeaderApp from './components/mf/HeaderApp';
-import ProductsApp from './components/mf/ProductsApp';
-import AuthorizationApp from './components/mf/AuthorizationApp';
-import CartApp from './components/mf/CartApp';
-import WishlistApp from './components/mf/WishlistApp';
-import ProfileApp from './components/mf/ProfileApp';
+import Footer from './components/Footer.jsx';
+import HeaderApp from './components/mf/HeaderApp.js';
+import ProductsApp from './components/mf/ProductsApp.js';
+import AuthorizationApp from './components/mf/AuthorizationApp.js';
+import CartApp from './components/mf/CartApp.js';
+import WishlistApp from './components/mf/WishlistApp.js';
+import ProfileApp from './components/mf/ProfileApp.js';
 
 function App() {
 
