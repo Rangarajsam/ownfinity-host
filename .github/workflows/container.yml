@@ -5,11 +5,11 @@ on:
     branches:
       - main
     paths:
-      - 'ownfinity-Host/**'
+      - 'ownfinity-host/**'
 
 defaults:
   run:
-    working-directory: ownfinity-Host
+    working-directory: ownfinity-host
 
 jobs:
   build:
