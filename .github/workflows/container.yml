@@ -37,11 +37,11 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 sync ./dist s3://ownfinity-frontend --delete
+          aws s3 sync dist s3://ownfinity-frontend/container/latest --delete
 
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E3JPCC9S9GYKXM \
-            --paths "/*"
+            --paths "/container/latest/index.html"
 
