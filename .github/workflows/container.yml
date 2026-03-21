@@ -37,7 +37,7 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 sync ./build s3://ownfinity-frontend --delete
+          aws s3 sync ./dist s3://ownfinity-frontend --delete
 
       - name: Invalidate CloudFront cache
         run: |
