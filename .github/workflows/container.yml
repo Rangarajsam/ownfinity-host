@@ -43,5 +43,5 @@ jobs:
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E3JPCC9S9GYKXM \
-            --paths "/container/latest/index.html"
+            --paths "/container/latest/*"
 
