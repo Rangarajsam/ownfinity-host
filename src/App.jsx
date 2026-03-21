@@ -26,6 +26,7 @@ function App() {
         <HeaderWrapper />
         <main className="flex-1 container mx-auto mt-[93px] h-[calc(100vh - 150px)] overflow-auto">
           {/* remote application placeholder */}
+          {/* added comments for workflow test */}
           <Routes>
             {/* Explicit routes for each remote app - these take priority */}
             <Route path="/login/*" element={<AuthorizationApp />} />
