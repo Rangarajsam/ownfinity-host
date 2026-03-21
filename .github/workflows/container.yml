@@ -26,7 +26,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::029848631441:oidc-provider/token.actions.githubusercontent.com
+          role-to-assume: arn:aws:iam::029848631441:role/ownfinity-frontend-github-action
           aws-region: ap-south-1
 
       - name: Install dependencies
