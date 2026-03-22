@@ -13,6 +13,7 @@ const prodConfig = {
     plugins: [
         new ModuleFederationPlugin({
             name: 'container',
+            filename: 'remoteEntry.js',
             remotes: {
                 products: `products@/products/latest/remoteEntry.js`,
                 header: `header@/header/latest/remoteEntry.js`,
@@ -20,6 +21,9 @@ const prodConfig = {
                 cart: `cart@/cart/latest/remoteEntry.js`,
                 wishlist: `wishlist@/wishlist/latest/remoteEntry.js`,
                 profile: `profile@/profile/latest/remoteEntry.js`
+            },
+            exposes: {
+                './eventBus': './src/event-bus.js'
             },
             shared: {
                 ...packageJson.dependencies,
