@@ -1,4 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+// Only load .env in development
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config({ path: '.env.development' });
+}
 
 module.exports = {
     module:{
@@ -30,6 +36,10 @@ module.exports = {
     plugins : [
         new HtmlWebpackPlugin({
             template:'./public/index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env.OWNFINITY_DEV_API_URL': JSON.stringify(process.env.OWNFINITY_DEV_API_URL),
+            'process.env.OWNFINITY_PROD_API_URL': JSON.stringify(process.env.OWNFINITY_PROD_API_URL),
         })
     ]
 }
